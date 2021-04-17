@@ -1,0 +1,36 @@
+package com.example.admin.model.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor  // 기본생성
+@Entity // ==table자
+@Table(name = "user")   // table명과 클래스명이 같으면 없어도 된다.
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // mysql을 사용하기 때문에 identity를 사용
+    private Long id;
+
+    @Column(name = "account")   // 없어도됨.
+    private String account;
+
+    private String email;
+
+    private String phoneNumber;
+
+    private LocalDateTime createdAt;
+
+    private String createdBy;
+
+    private LocalDateTime updatedAt;
+
+    private String updatedBy;
+
+}
