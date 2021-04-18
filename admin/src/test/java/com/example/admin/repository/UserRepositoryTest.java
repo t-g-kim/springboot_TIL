@@ -45,6 +45,8 @@ public class UserRepositoryTest extends AdminApplicationTest {
             findById 는 Optional로 반환해준다.
             (있을수도 있고 없을수도 있다.)
          */
+
+        // select * from user where id = ?
         Optional<User> user = userRepository.findById(7L);
         user.ifPresent(selectUser -> {
             System.out.println("user : " + selectUser.getAccount());
