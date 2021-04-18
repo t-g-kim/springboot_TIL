@@ -1,16 +1,13 @@
 package com.example.admin.repository;
 
 import com.example.admin.AdminApplicationTest;
-import com.example.admin.UserRepository;
+import com.example.admin.model.entity.Item;
 import com.example.admin.model.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
-import javax.validation.constraints.AssertFalse;
-import javax.validation.constraints.AssertTrue;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -41,16 +38,23 @@ public class UserRepositoryTest extends AdminApplicationTest {
     }
 
     @Test
+    @Transactional
     public void read() {
 
         /*
             findById 는 Optional로 반환해준다.
             (있을수도 있고 없을수도 있다.)
          */
-        Optional<User> user = userRepository.findById(1L);
+        Optional<User> user = userRepository.findById(7L);
         user.ifPresent(selectUser -> {
-            System.out.println("user : " + selectUser);
+            System.out.println("user : " + selectUser.getAccount());
             System.out.println("email : " + selectUser.getEmail());
+
+            selectUser.getOrderDetailList().stream().forEach(orderDetail -> {
+                Item item = orderDetail.getItem();
+
+                System.out.println("item : " + item);
+            });
         });
     }
 
