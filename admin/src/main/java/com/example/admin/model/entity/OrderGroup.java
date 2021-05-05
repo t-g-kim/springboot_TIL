@@ -1,19 +1,22 @@
 package com.example.admin.model.entity;
 
+import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-//@ToString(exclude = {"user", "item"})   //toString 때문에 overflow가 생긴다. orderdetail과 user가 상호참조
-public class OrderDetail {
+public class OrderGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +24,21 @@ public class OrderDetail {
 
     private String status;
 
-    private LocalDateTime arrival_date;
+    private String orderType;   // 주문형태 - 일괄 / 개별
 
-    private Integer quantity;
+    private String revAddress;
+
+    private String revName;
+
+    private String paymentType;
 
     private BigDecimal totalPrice;
+
+    private Integer totalQuantity;
+
+    private LocalDateTime orderAt;
+
+    private LocalDateTime arrivalDate;
 
     private LocalDateTime createdAt;
 
@@ -35,16 +48,6 @@ public class OrderDetail {
 
     private String updatedBy;
 
-    private Long itemId;
-
-    private Long orderGroupId;
-
-//    // N:1
-//    @ManyToOne
-//    private User user;  // hibernate를 통한 연관관계를 설정시 객체 이름을 사용해야함
-//
-//    // N:1
-//    @ManyToOne
-//    private Item item;
+    private Long userId;
 
 }

@@ -22,43 +22,83 @@ public class UserRepositoryTest extends AdminApplicationTest {
 
     @Test
     public void create() {
-        // DI는 싱글톤
+        String accout = "Test01";
+
+        String password = "Test01";
+
+        String status = "REGISTERED";
+
+        String email = "Test01@gmail.com";
+
+        String phoneNumber = "010-1111-2222";
+
+        LocalDateTime registeredAt = LocalDateTime.now();
+        LocalDateTime createdAt = LocalDateTime.now();
+
+        String createdBy = "AdminServer";
+
         User user = new User();
-        user.setAccount("TestUser03");
-        user.setEmail("TestUser03@gmail.com");
-        user.setPhoneNumber("010-1111-3333");
-        user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("admin");
+        user.setAccount(accout);
+        user.setPassword(password);
+        user.setStatus(status);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setRegisteredAt(registeredAt);
+        user.setCreatedAt(createdAt);
+        user.setCreatedBy(createdBy);
 
         User newUser = userRepository.save(user);
-        System.out.println("newUser : " + newUser.getId());
-        System.out.println("newUser : " + newUser.getAccount());
-        System.out.println("newUser : " + newUser.getEmail());
-        System.out.println("newUser : " + newUser);
+        Assert.assertNotNull(newUser);
     }
+
+
 
     @Test
-    @Transactional
     public void read() {
 
-        /*
-            findById 는 Optional로 반환해준다.
-            (있을수도 있고 없을수도 있다.)
-         */
-
-        // select * from user where id = ?
-        Optional<User> user = userRepository.findById(7L);
-        user.ifPresent(selectUser -> {
-            System.out.println("user : " + selectUser.getAccount());
-            System.out.println("email : " + selectUser.getEmail());
-
-            selectUser.getOrderDetailList().stream().forEach(orderDetail -> {
-                Item item = orderDetail.getItem();
-
-                System.out.println("item : " + item);
-            });
-        });
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
+        Assert.assertNotNull(user);
     }
+
+//    @Test
+//    public void create() {
+//        // DI는 싱글톤
+//        User user = new User();
+//        user.setAccount("TestUser03");
+//        user.setEmail("TestUser03@gmail.com");
+//        user.setPhoneNumber("010-1111-3333");
+//        user.setCreatedAt(LocalDateTime.now());
+//        user.setCreatedBy("admin");
+//
+//        User newUser = userRepository.save(user);
+//        System.out.println("newUser : " + newUser.getId());
+//        System.out.println("newUser : " + newUser.getAccount());
+//        System.out.println("newUser : " + newUser.getEmail());
+//        System.out.println("newUser : " + newUser);
+//    }
+
+//    @Test
+//    @Transactional
+//    public void read() {
+//
+//        /*
+//            findById 는 Optional로 반환해준다.
+//            (있을수도 있고 없을수도 있다.)
+//         */
+//
+//        // select * from user where id = ?
+//        Optional<User> user = userRepository.findById(7L);
+//        user.ifPresent(selectUser -> {
+//            System.out.println("user : " + selectUser.getAccount());
+//            System.out.println("email : " + selectUser.getEmail());
+//
+//            selectUser.getOrderDetailList().stream().forEach(orderDetail -> {
+//                Item item = orderDetail.getItem();
+//
+//                System.out.println("item : " + item);
+//            });
+//        });
+//    }
 
     @Test
     public void update() {
