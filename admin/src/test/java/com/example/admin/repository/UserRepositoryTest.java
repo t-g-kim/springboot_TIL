@@ -54,9 +54,33 @@ public class UserRepositoryTest extends AdminApplicationTest {
 
 
     @Test
+    @Transactional
     public void read() {
 
         User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
+
+        // 연관관계 설정후 orderGroup가져오기
+        user.getOrderGroupList().stream().forEach(orderGroup -> {
+            System.out.println("-------- 장바구니 주문 묶음 --------");
+            System.out.println("수령인 : " + orderGroup.getRevName());
+            System.out.println("총 금액  : " + orderGroup.getTotalPrice());
+            System.out.println("총 수량 : " + orderGroup.getTotalQuantity());
+            System.out.println("수령지 : " + orderGroup.getRevAddress());
+
+            System.out.println("-------- 주문 상세 --------");
+            orderGroup.getOrderDetailList().forEach(orderDetail -> {
+                System.out.println("파트너사 이름 : " + orderDetail.getItem().getPartner().getName());
+                System.out.println("파트너사 카테고 : " + orderDetail.getItem().getPartner().getCategory().getTitle());
+                System.out.println("주문의 상태 : " + orderDetail.getStatus());
+                System.out.println("도착 예정일자 : " + orderDetail.getArrival_date());
+
+                System.out.println("주문상품 : " + orderDetail.getItem().getName());
+                System.out.println("제조 : " + orderDetail.getItem().getBrandName());
+                System.out.println("전화번호 : " + orderDetail.getItem().getPartner().getCallCenter());
+
+            });
+        });
+
         Assert.assertNotNull(user);
     }
 

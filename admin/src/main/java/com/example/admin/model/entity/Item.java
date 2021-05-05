@@ -3,11 +3,13 @@ package com.example.admin.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@ToString(exclude = {"orderDetailList", "partner"})
 @Data
 @AllArgsConstructor     // 모든생성자
 @NoArgsConstructor      // 기본생성자
@@ -42,7 +44,16 @@ public class Item {
 
     private String updatedBy;
 
-    private Long partnerId;
+//    private Long partnerId;
+
+    // Item N : 1 Partner
+    @ManyToOne
+    private Partner partner;
+
+    // Item 1 : N OrderDetail
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "item")
+    private List<OrderDetail> orderDetailList;
+
 
 
     // 1:N

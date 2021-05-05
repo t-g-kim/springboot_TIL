@@ -2,7 +2,6 @@ package com.example.admin.repository;
 
 import com.example.admin.AdminApplicationTest;
 import com.example.admin.model.entity.OrderGroup;
-import org.aspectj.weaver.ast.Or;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class OrderGroupRepositoryTest extends AdminApplicationTest {
         orderGroup.setArrivalDate(LocalDateTime.now());
         orderGroup.setCreatedAt(LocalDateTime.now());
         orderGroup.setCreatedBy("AdminServer");
-        orderGroup.setUserId(1L);
+//        orderGroup.setUserId(1L);   // -> User
 
         OrderGroup newOrderGroup = orderGroupRepository.save(orderGroup);
         Assert.assertNotNull(newOrderGroup);

@@ -4,14 +4,14 @@ import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
+@ToString(exclude = {"user", "orderGroup"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -48,6 +48,11 @@ public class OrderGroup {
 
     private String updatedBy;
 
-    private Long userId;
+    // OrderGroup N : 1 User
+    @ManyToOne
+    private User user;  //user entity에 있는 mappedBy에 값과 일치해야한다.
 
+    // OrderGroup 1 : N OrderDetail
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderGroup")
+    private List<OrderDetail> orderDetailList;
 }

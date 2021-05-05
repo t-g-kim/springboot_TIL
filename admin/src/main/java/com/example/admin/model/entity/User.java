@@ -3,11 +3,13 @@ package com.example.admin.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@ToString(exclude = {"orderGroup"})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor  // 기본생성
@@ -41,6 +43,10 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    // User 1 : N OrderGroup
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<OrderGroup> orderGroupList;
 
 //    // 1:N
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
