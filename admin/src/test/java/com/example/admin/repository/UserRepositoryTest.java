@@ -22,21 +22,22 @@ public class UserRepositoryTest extends AdminApplicationTest {
 
     @Test
     public void create() {
-        String accout = "Test01";
+        String accout = "Test03";
 
-        String password = "Test01";
+        String password = "Test03";
 
         String status = "REGISTERED";
 
         String email = "Test01@gmail.com";
 
-        String phoneNumber = "010-1111-2222";
+        String phoneNumber = "010-1111-3333";
 
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime createdAt = LocalDateTime.now();
 
         String createdBy = "AdminServer";
 
+        //  User user = new User(accout, password, status, email, phoneNumber, registeredAt, createdAt);
         User user = new User();
         user.setAccount(accout);
         user.setPassword(password);
@@ -44,8 +45,7 @@ public class UserRepositoryTest extends AdminApplicationTest {
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
         user.setRegisteredAt(registeredAt);
-        user.setCreatedAt(createdAt);
-        user.setCreatedBy(createdBy);
+
 
         User newUser = userRepository.save(user);
         Assert.assertNotNull(newUser);
