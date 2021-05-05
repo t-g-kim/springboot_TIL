@@ -38,7 +38,16 @@ public class UserRepositoryTest extends AdminApplicationTest {
         String createdBy = "AdminServer";
 
         //  User user = new User(accout, password, status, email, phoneNumber, registeredAt, createdAt);
-        User user = new User();
+        //  User user = new User();
+
+        // 객체 생성시 builder 패턴
+        // 객체를 업데이트 할떄는 chain 패턴
+        User user = User.builder()
+                .account(accout)
+                .password(password)
+                .status(status)
+                .email(email)
+                .build();
         user.setAccount(accout);
         user.setPassword(password);
         user.setStatus(status);
@@ -58,6 +67,18 @@ public class UserRepositoryTest extends AdminApplicationTest {
     public void read() {
 
         User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
+
+        /*
+            chain patter
+
+            user.setEmail();
+            user.setStatus();
+            user.setCreatedAt();
+
+            user.setEmail("").setStatus("").setCreatedBy("");
+         */
+
+
 
         // 연관관계 설정후 orderGroup가져오기
         user.getOrderGroupList().stream().forEach(orderGroup -> {
