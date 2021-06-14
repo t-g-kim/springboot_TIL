@@ -70,6 +70,7 @@ repositories {
 
 dependencies {
     compile project(':admin')
+    compile project(':til')
 }
 
 
