@@ -1,4 +1,6 @@
 rootProject.name = 'springboot_practice'
 include 'admin'
 include 'til'
+include 'module_server'
+include 'module_client'
 
