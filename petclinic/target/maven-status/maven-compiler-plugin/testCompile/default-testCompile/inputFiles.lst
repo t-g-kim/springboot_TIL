@@ -2,6 +2,7 @@
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java
+/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/sample/SampleControllerTest.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java

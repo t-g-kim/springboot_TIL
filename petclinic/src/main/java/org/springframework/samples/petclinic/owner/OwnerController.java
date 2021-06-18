@@ -15,9 +15,11 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.visit.VisitRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StopWatch;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,11 +45,18 @@ class OwnerController {
 
 	private final OwnerRepository owners;
 
+	// PetRepository 주입하기
+	// @Autowired
+	// private PetRepository petRepository;
+	private final PetRepository petRepository;
+
 	private VisitRepository visits;
 
-	public OwnerController(OwnerRepository clinicService, VisitRepository visits) {
+	// 생성자를 통해 주입받는다.
+	public OwnerController(OwnerRepository clinicService, VisitRepository visits, PetRepository petRepository) {
 		this.owners = clinicService;
 		this.visits = visits;
+		this.petRepository = petRepository;
 	}
 
 	@InitBinder
@@ -56,6 +65,7 @@ class OwnerController {
 	}
 
 	@GetMapping("/owners/new")
+	@LogExcutionTime
 	public String initCreationForm(Map<String, Object> model) {
 		Owner owner = new Owner();
 		model.put("owner", owner);
@@ -63,23 +73,33 @@ class OwnerController {
 	}
 
 	@PostMapping("/owners/new")
+	@LogExcutionTime
 	public String processCreationForm(@Valid Owner owner, BindingResult result) {
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
 		if (result.hasErrors()) {
+			stopWatch.stop();
+			System.out.println(stopWatch.prettyPrint());
 			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
 		}
 		else {
 			this.owners.save(owner);
+			stopWatch.stop();
+			System.out.println(stopWatch.prettyPrint());
 			return "redirect:/owners/" + owner.getId();
 		}
+
 	}
 
 	@GetMapping("/owners/find")
+	@LogExcutionTime
 	public String initFindForm(Map<String, Object> model) {
 		model.put("owner", new Owner());
 		return "owners/findOwners";
 	}
 
 	@GetMapping("/owners")
+	@LogExcutionTime
 	public String processFindForm(Owner owner, BindingResult result, Map<String, Object> model) {
 
 		// allow parameterless GET request for /owners to return all records
@@ -107,6 +127,7 @@ class OwnerController {
 	}
 
 	@GetMapping("/owners/{ownerId}/edit")
+	@LogExcutionTime
 	public String initUpdateOwnerForm(@PathVariable("ownerId") int ownerId, Model model) {
 		Owner owner = this.owners.findById(ownerId);
 		model.addAttribute(owner);
@@ -114,6 +135,7 @@ class OwnerController {
 	}
 
 	@PostMapping("/owners/{ownerId}/edit")
+	@LogExcutionTime
 	public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result,
 			@PathVariable("ownerId") int ownerId) {
 		if (result.hasErrors()) {
@@ -132,6 +154,7 @@ class OwnerController {
 	 * @return a ModelMap with the model attributes for the view
 	 */
 	@GetMapping("/owners/{ownerId}")
+	@LogExcutionTime
 	public ModelAndView showOwner(@PathVariable("ownerId") int ownerId) {
 		ModelAndView mav = new ModelAndView("owners/ownerDetails");
 		Owner owner = this.owners.findById(ownerId);

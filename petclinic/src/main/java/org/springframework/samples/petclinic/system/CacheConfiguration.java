@@ -32,6 +32,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableCaching
 class CacheConfiguration {
 
+	// 직접 빈을 등록한다.
 	@Bean
 	public JCacheManagerCustomizer petclinicCacheConfigurationCustomizer() {
 		return cm -> {

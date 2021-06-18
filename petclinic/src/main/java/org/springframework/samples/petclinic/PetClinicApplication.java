@@ -25,7 +25,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Dave Syer
  *
  */
-@SpringBootApplication(proxyBeanMethods = false)
+@SpringBootApplication(proxyBeanMethods = false) // <- 이 안에 ComponentScan이라는 어노테이션이 있다. 이
+													// 위치에서 부터 모든 하위패키지에 있는 모든 클래스를 찾아본다.
 public class PetClinicApplication {
 
 	public static void main(String[] args) {

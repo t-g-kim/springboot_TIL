@@ -1,4 +1,59 @@
 -------------------------------------------------------------------------------
 Test set: org.springframework.samples.petclinic.owner.OwnerControllerTests
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.752 s - in org.springframework.samples.petclinic.owner.OwnerControllerTests
+Tests run: 11, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 9.827 s <<< FAILURE! - in org.springframework.samples.petclinic.owner.OwnerControllerTests
+testProcessUpdateOwnerFormHasErrors  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessCreationFormSuccess  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testInitFindForm  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testShowOwner  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testInitUpdateOwnerForm  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testInitCreationForm  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessFindFormByLastName  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessFindFormNoOwnersFound  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessFindFormSuccess  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessUpdateOwnerFormSuccess  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
+testProcessCreationFormHasErrors  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ownerController' defined in file [/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/target/classes/org/springframework/samples/petclinic/owner/OwnerController.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.samples.petclinic.owner.PetRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+

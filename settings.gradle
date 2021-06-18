@@ -1,4 +1,4 @@
-rootProject.name = 'springboot_practice'
+rootProject.name = 'springboot_til'
 include 'admin'
 include 'til'
 include 'module_server'

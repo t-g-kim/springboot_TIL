@@ -6,9 +6,11 @@
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/system/CrashController.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
+/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/sample/SampleConfig.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/model/package-info.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/vet/Specialty.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java
+/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/LogAspect.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/Owner.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java
@@ -16,6 +18,8 @@
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java
+/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/LogExcutionTime.java
+/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/sample/SampleController.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/Pet.java
 /Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/vet/Vets.java

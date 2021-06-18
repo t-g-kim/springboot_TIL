@@ -8,8 +8,6 @@
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/readme.md">
 </file>
-<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/.gitignore">
-</file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/.mvn/wrapper/MavenWrapperDownloader.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/.mvn/wrapper/maven-wrapper.properties">
@@ -45,6 +43,8 @@
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java">
+</file>
+<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/sample/SampleControllerTest.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java">
 </file>
@@ -150,6 +150,8 @@
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/vet/Vets.java">
 </file>
+<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/LogExcutionTime.java">
+</file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/Pet.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java">
@@ -161,6 +163,8 @@
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java">
+</file>
+<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/LogAspect.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetController.java">
 </file>
@@ -187,6 +191,10 @@
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/model/package-info.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java">
+</file>
+<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/sample/SampleController.java">
+</file>
+<file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/sample/SampleConfig.java">
 </file>
 <file name="/Users/tgkim/IdeaProjects/springboot_TIL/petclinic/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java">
 </file>
