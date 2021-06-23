@@ -10,6 +10,12 @@ repositories {
 }
 
 dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('mysql:mysql-connector-java')
+    implementation('org.projectlombok:lombok')
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
     implementation 'junit:junit:4.12'
     implementation 'junit:junit:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'

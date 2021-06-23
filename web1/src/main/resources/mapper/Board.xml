@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web1.mvc.repository.BoardRepository">
+    <select id="getList" resultType="com.web1.mvc.domain.Board">
+        SELECT
+            board_seq,
+            title,
+            contents,
+            reg_date
+        FROM Board
+    </select>
+
+    <select id="get" parameterType="int" resultType="com.web1.mvc.domain.Board">
+        SELECT
+            B.board_seq,
+            B.title,
+            B.contents,
+            B.reg_date
+        FROM Board B
+        WHERE B.board_seq = #{boardSeq}
+    </select>
+
+    <insert id="save" parameterType="com.web1.mvc.domain.Board">
+        INSERT INTO Board
+            (
+                title,
+                contents,
+                reg_date
+            )
+        VALUES
+            (
+                #{title},
+                #{contents},
+                NOW()
+            )
+    </insert>
+
+    <insert id="update" parameterType="com.web1.mvc.domain.Board">
+        UPDATE Board
+        SET
+            title = #{title},
+            contents = #{contents}
+        WHERE B.board_seq = #{board_seq}
+    </insert>
+
+    <insert id="delete" parameterType="int">
+        DELETE FROM Board
+        WHERE B.board_seq = #{board_seq}
+    </insert>
+</mapper>
