@@ -20,7 +20,7 @@
         WHERE B.board_seq = #{boardSeq}
     </select>
 
-    <insert id="save" parameterType="com.web1.mvc.domain.Board">
+    <insert id="save" parameterType="com.web1.mvc.domain.Board" useGeneratedKeys="true" keyProperty="boardSeq">
         INSERT INTO Board
             (
                 title,
@@ -35,16 +35,16 @@
             )
     </insert>
 
-    <insert id="update" parameterType="com.web1.mvc.domain.Board">
+    <update id="update" parameterType="com.web1.mvc.domain.Board">
         UPDATE Board
         SET
             title = #{title},
             contents = #{contents}
-        WHERE B.board_seq = #{board_seq}
-    </insert>
+        WHERE board_seq = #{boardSeq}
+    </update>
 
-    <insert id="delete" parameterType="int">
+    <delete id="delete" parameterType="int">
         DELETE FROM Board
-        WHERE B.board_seq = #{board_seq}
-    </insert>
+        WHERE board_seq = #{board_seq}
+    </delete>
 </mapper>

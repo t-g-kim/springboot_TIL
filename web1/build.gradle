@@ -11,10 +11,10 @@ repositories {
 
 dependencies {
     /*
-    데이터베이스 커넥션을 관리해주는 도구이다.
-    커넥션 풀은 설정된 풀의 사이즈만큼의 커넥션만을 허용하며 순차적으로 DB에 요청된 커넥션을 처리해준다.
-    여러 DBCP(Database Connection Pool)가 존재는데 그 중 히카리 CP는 가볍고 빠른 처리속도를 자랑하며 스프링 부트 2.0부터 default DBCP로 지정되었다.
-    https://gongbu-ing.tistory.com/103
+        데이터베이스 커넥션을 관리해주는 도구이다.
+        커넥션 풀은 설정된 풀의 사이즈만큼의 커넥션만을 허용하며 순차적으로 DB에 요청된 커넥션을 처리해준다.
+        여러 DBCP(Database Connection Pool)가 존재는데 그 중 히카리 CP는 가볍고 빠른 처리속도를 자랑하며 스프링 부트 2.0부터 default DBCP로 지정되었다.
+        https://gongbu-ing.tistory.com/103
      */
     compile 'com.zaxxer:HikariCP:3.4.5'
 

@@ -2,17 +2,17 @@ package com.web1.mvc.service;
 
 import com.web1.mvc.domain.Board;
 import com.web1.mvc.repository.BoardRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class BoardService {
 
-    private BoardRepository boardRepository;
 
+    private final BoardRepository boardRepository;
 
     /**
      * @return
@@ -32,8 +32,9 @@ public class BoardService {
     /**
      * @param board
      */
-    public void save(Board board) {
+    public int save(Board board) {
         boardRepository.save(board);
+        return board.getBoardSeq();
     };
 
     /**
