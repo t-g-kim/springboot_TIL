@@ -1,6 +1,7 @@
 package com.web1.mvc.service;
 
 import com.web1.mvc.domain.Board;
+import com.web1.mvc.parameter.BoardParameter;
 import com.web1.mvc.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,19 +31,19 @@ public class BoardService {
     };
 
     /**
-     * @param board
+     * @param BoardParameter
      */
-    public int save(Board board) {
-        boardRepository.save(board);
-        return board.getBoardSeq();
+    public boolean save(BoardParameter boardParameter) {
+        boardRepository.save(boardParameter);
+        return true;
     };
 
     /**
      * 업데이트 처리
-     * @param board
+     * @param BoardParameter
      */
-    public void update(Board board) {
-        boardRepository.update(board);
+    public void update(BoardParameter boardParameter) {
+        boardRepository.update(boardParameter);
     };
 
     /**

@@ -12,5 +12,5 @@ public class Board {
     private int boardSeq;
     private String title;
     private String contents;
-    private Date regDate;
+//    private Date regDate;
 }

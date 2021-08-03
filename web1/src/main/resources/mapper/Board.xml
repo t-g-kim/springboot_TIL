@@ -20,7 +20,7 @@
         WHERE B.board_seq = #{boardSeq}
     </select>
 
-    <insert id="save" parameterType="com.web1.mvc.domain.Board" useGeneratedKeys="true" keyProperty="boardSeq">
+    <insert id="save" parameterType="com.web1.mvc.parameter.BoardParameter" useGeneratedKeys="true" keyProperty="boardSeq">
         INSERT INTO Board
             (
                 title,
@@ -35,7 +35,7 @@
             )
     </insert>
 
-    <update id="update" parameterType="com.web1.mvc.domain.Board">
+    <update id="update" parameterType="com.web1.mvc.parameter.BoardParameter">
         UPDATE Board
         SET
             title = #{title},
