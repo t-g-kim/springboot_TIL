@@ -70,6 +70,7 @@ dependencies {
     compile project(':til')
     compile project(':module_server')
     compile project(':module_client')
+    compile project(':elasticSearch')
 }
 
 
