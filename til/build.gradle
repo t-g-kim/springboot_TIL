@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation('org.projectlombok:lombok')
     implementation 'junit:junit:4.13.1'
     implementation 'org.testng:testng:7.1.0'
     compile 'org.springframework.boot:spring-boot-starter-webflux'
