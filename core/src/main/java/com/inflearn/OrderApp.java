@@ -8,17 +8,24 @@ import com.inflearn.member.MemberServiceImpl;
 import com.inflearn.order.Order;
 import com.inflearn.order.OrderService;
 import com.inflearn.order.OrderServiceImpl;
-import com.sun.tools.corba.se.idl.constExpr.Or;
+import javafx.application.Application;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
     public static void main(String[] args) {
 
-        AppConfig appConfig = new AppConfig();
+//        AppConfig appConfig = new AppConfig();
+//
+//        MemberService memberService = appConfig.memberService();
+//        OrderService orderService = appConfig.orderService();
+////        MemberService memberService = new MemberServiceImpl();
+////        OrderService orderService = new OrderServiceImpl();
 
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
-//        MemberService memberService = new MemberServiceImpl();
-//        OrderService orderService = new OrderServiceImpl();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
